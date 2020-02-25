@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Listado
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button (click)="this.logout()">cerrar</ion-button>
+
+
+
+    <ion-title>
+      Lista de torneos
+    </ion-title>
+    <ion-list>
+      <ion-item-sliding *ngFor="let torneo of torneo">
+        <ion-item lines="inset" (click)="detalles(torneo)">
+          <ion-label>
+            <h2>{{torneo.name}}</h2>
+            <p>{{torneo.description}}</p>
+            
+            
+            
+          </ion-label>
+        </ion-item>
+        
+        <ion-item-options side="end">
+          <ion-item-option (click)="unread(torneo)">Apuntarse</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Cargando mas torneos...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+    <ion-fab (click)="this.addTorneo()" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

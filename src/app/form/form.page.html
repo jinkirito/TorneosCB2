@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding> 
+  <ion-list lines="full">
+    <ion-item *ngIf="torneo">
+      <ion-input require type="text" placeholder="Name" [(ngModel)]="torneo.name">
+      </ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="torneo">
+      <ion-input require type="text" placeholder="Description" [(ngModel)]="torneo.description">
+      </ion-input>
+    </ion-item>
+   
+    <img  [src]="URL" />
+        <ion-button (click)="foto()">Añadir Foto</ion-button>
+  
+
+  </ion-list>
+  <ion-button (click)="saveTorneo()">Añadir</ion-button>
+  <ion-button color="danger" (click)="delTorneo()">Eliminar</ion-button>
+  <ion-button  (click)="irMap()">VerRuta</ion-button>
+
+
+
+
+
+
+ <!-- <ion-fab-button (click)="photoService.cogerFoto()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+  -->
+</ion-content>

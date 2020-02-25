@@ -1,0 +1,7 @@
+{
+    "hello":"hola",
+    "close":"cerrar",
+    "modal":{
+        "open":"abrir"
+    }
+}

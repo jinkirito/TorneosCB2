@@ -1,0 +1,7 @@
+{
+  "name": "TorneosCB",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
